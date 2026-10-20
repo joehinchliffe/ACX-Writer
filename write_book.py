@@ -14,7 +14,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from acx_writer import editor, marketing, outline, research, writer
+from acx_writer import editor, imported, marketing, outline, research, writer
 from acx_writer.docs import save_manuscript_docx
 from acx_writer.project import Book, word_count
 
@@ -30,6 +30,11 @@ def main():
                         help="Image of a competing cover for the cover brief (repeatable)")
     parser.add_argument("--no-web-search", action="store_true",
                         help="Research and categories from Claude's own knowledge only")
+    parser.add_argument("--from-folder", type=Path,
+                        help="Use existing research and outline documents from this folder instead of "
+                             "generating them (see acx_writer/imported.py for the file names)")
+    parser.add_argument("--skip", action="append", default=[], choices=["descriptions", "categories", "cover"],
+                        help="Skip a marketing step, e.g. when its document already exists (repeatable)")
     args = parser.parse_args()
 
     for path in args.competitor_cover:
@@ -40,8 +45,11 @@ def main():
     web = not args.no_web_search
     print(f"Book: {book.title} — {book.subtitle}\nBy {book.pen_name} · {book.word_count:,} words\nFolder: {book.root}")
 
-    res = research.run(book, web_search=web)
-    plan = outline.run(book, res)
+    if args.from_folder:
+        res, plan = imported.run(book, args.from_folder)
+    else:
+        res = research.run(book, web_search=web)
+        plan = outline.run(book, res)
     draft = writer.run(book, res, plan)
     final, _ = editor.run(book, res, draft, book.load("style_guide.md"))
 
@@ -52,9 +60,12 @@ def main():
     (book.root / f"{book.file_title}.md").write_text(text, encoding="utf-8")
     print(f"\n  ✓ Manuscript saved: {word_count(text):,} words")
 
-    marketing.descriptions(book, res, text)
-    marketing.categories(book, res, final, web_search=web)
-    marketing.cover(book, res, plan["overview"], args.competitor_cover)
+    if "descriptions" not in args.skip:
+        marketing.descriptions(book, res, text)
+    if "categories" not in args.skip:
+        marketing.categories(book, res, final, web_search=web)
+    if "cover" not in args.skip:
+        marketing.cover(book, res, plan["overview"], args.competitor_cover)
 
     print(f"\nDone. Everything is in: {book.root}")
 

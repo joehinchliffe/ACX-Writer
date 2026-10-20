@@ -23,10 +23,11 @@ Subtitle: {{subtitle}}
 # Substance
 - Every chapter teaches something the reader can use this week: a concrete technique, script, question, or practice, explained step by step.
 - Ground every idea in a specific scene: a person, a moment, what was said, what happened next. Aim for a concrete example or short story every 400 to 600 words.
-- Stories are illustrative composites. Give people first names and specific, believable details, and never present them as real case files, clients, or interviews. Never reuse a name, story, or example that appears earlier in the book.
+- Stories are illustrative composites. Give people first names and specific, believable details, and never present them as real case files, clients, or interviews. Never repeat a story or example that appears earlier in the book. Recurring characters the outline brings back may return, in new situations; otherwise give each new story new people.
 - Do not invent statistics, studies, quotes, experts, or citations. Mention research only when it is well established and widely known (for example, attachment theory from Bowlby and Ainsworth), describe it in general terms, and never attach made-up numbers or years.
 - Health, psychology, and money topics: offer practical support, not diagnosis or treatment. Where it matters, gently suggest a qualified professional. No promises of guaranteed results.
 
+{{book_tone}}
 # Words and habits to avoid
 Do not use: delve, tapestry, testament, realm, navigate (as a metaphor), embark, journey (more than once per chapter), unlock, unleash, empower, game-changer, transformative, profound, crucial, pivotal, paramount, "in today's fast-paced world", "it's important to note", "at the end of the day", "the truth is", "let's dive in", "buckle up".
 Avoid these patterns: "It's not X, it's Y" more than once per chapter; three-item lists used for rhythm; rhetorical questions stacked back to back; ending sections with a one-line moral; excessive em dashes (use commas and full stops instead); summarising what you just said.

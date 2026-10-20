@@ -15,7 +15,11 @@ python write_book.py \
   --word-count 20000
 ```
 
-Options: `--english British`, `--competitor-cover cover.jpg` (repeatable; gives the cover brief competing covers to beat), `--no-web-search`.
+Options: `--english British`, `--competitor-cover cover.jpg` (repeatable; gives the cover brief competing covers to beat), `--no-web-search`, `--skip descriptions|categories|cover`.
+
+### From existing research and outline
+
+If the reader persona and expanded outline already exist (for example from an earlier Claude session), put them in a folder as `.md`, `.txt` or `.docx` files named by number: `01 Dream Reader Persona` and `04 Outline Expanded` (required), and optionally `00 Market Research Inputs`, `04a Tone and Style`, `05 Outline Information`. Then add `--from-folder that/folder`. The research and outline steps are skipped; chapters and word counts come from the outline's `## Chapter N: Title (4,000 words)` headings, each chapter is written from its section of the outline, and the tone-and-style file is added to the style guide.
 
 If a run stops partway (network error, credits), run the same command again. Every step's result is saved in `output/<pen name>/<title>/.work/`, so it continues where it stopped. To redo one step, delete its file there (for example `draft_03.md` rewrites Chapter 3; every later step that depends on it must be deleted too).
 

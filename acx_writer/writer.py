@@ -17,12 +17,15 @@ Keep the "##" section headings. Output only the rewritten text.
 </draft>"""
 
 
-def style_guide(book: Book, research: dict, info: dict) -> str:
+def style_guide(book: Book, research: dict, info: dict, tone: str = "") -> str:
+    book_tone = (f"# Tone and style for this book (follows the rules above; wins where they differ)\n{tone.strip()}\n"
+                 if tone.strip() else "")
     return render(
         "style_guide", pen_name=book.pen_name, title=book.title, subtitle=book.subtitle,
         reader_brief=reader_text(research), english_style=book.english_style,
         reading_level=info["reading_level"],
         writing_style=", ".join(w["style"] for w in info["writing_styles"]) or "Supportive/Empathetic",
+        book_tone=book_tone,
     )
 
 
@@ -45,7 +48,8 @@ def manuscript(chapters: list[dict]) -> str:
 def run(book: Book, research: dict, outline: dict) -> list[dict]:
     parts = outline["parts"]
     print(f"\n[3/7] Writing the first draft ({len(parts)} parts)")
-    system = book.step("style_guide.md", lambda: style_guide(book, research, outline["info"]))
+    system = book.step("style_guide.md", lambda: style_guide(book, research, outline["info"],
+                                                             outline.get("tone", "")))
     chapters: list[dict] = []
 
     for i, part in enumerate(parts):

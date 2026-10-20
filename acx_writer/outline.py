@@ -128,7 +128,9 @@ def draft_markdown(parts: list[dict]) -> str:
 
 def plan_markdown(part: dict) -> str:
     plan = part["plan"]
-    lines = [f"**Promise:** {plan['promise']}", f"**Opening hook:** {plan['opening_hook']}", ""]
+    if isinstance(plan, str):  # imported from an existing outline document
+        return plan
+    lines =[f"**Promise:** {plan['promise']}", f"**Opening hook:** {plan['opening_hook']}", ""]
     for s in plan["sections"]:
         lines.append(f"### {s['title']} ({s['word_count']:,} words)")
         lines.append(s["description"])

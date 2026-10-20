@@ -16,5 +16,5 @@ Rules for this part:
 - Follow the plan's order, sections, stories and tools, but write it as finished, polished prose, not as notes. You may improve on a planned story if a better one serves the reader.
 - {{position_note}}
 - Pick up naturally from where the previous part ended. Do not re-introduce the book or re-explain ideas already covered; refer back to them briefly instead.
-- Do not reuse any name, story, example, metaphor or opening move already used in the text above.
+- Do not reuse any story, example, metaphor or opening move already used in the text above. Recurring characters from the plan may return in new situations; keep their names and details consistent with earlier chapters.
 - Output only the text of this part. Start with its first sentence (no chapter title or chapter number). Use "##" for section headings.

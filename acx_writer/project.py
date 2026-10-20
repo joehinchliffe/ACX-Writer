@@ -44,7 +44,6 @@ class Book:
     def __post_init__(self):
         self.root = OUTPUT_DIR / safe_name(self.pen_name) / safe_name(self.title)
         self.work.mkdir(parents=True, exist_ok=True)
-        self.research.mkdir(parents=True, exist_ok=True)
 
     @property
     def work(self) -> Path:
