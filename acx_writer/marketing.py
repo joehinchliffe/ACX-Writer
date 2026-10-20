@@ -10,7 +10,7 @@ from docx import Document
 
 from . import llm
 from .docs import add_inline, save_markdown_docx
-from .project import PROMPTS_DIR, Book, render
+from .project import PROMPTS_DIR, Book, render, word_count
 from .research import reader_text
 
 # Prepended to the audiobook versions of each description.
@@ -70,7 +70,9 @@ def categories(book: Book, research: dict, chapters: list[dict], *, web_search: 
     text = book.step("categories.md", lambda: llm.ask(
         render("categories", title=book.title, subtitle=book.subtitle, audience=research["audience"],
                pain_point=research["pain_point"], transformation=research["transformation"],
-               chapter_titles="\n".join(f"- {c['heading']}" for c in chapters)),
+               chapter_titles="\n".join(f"- {c['heading']}" for c in chapters),
+               # ACX narration runs at roughly 155 words a minute.
+               audio_hours=f"{sum(word_count(c['text']) for c in chapters) / 155 / 60:.1f}"),
         kind="marketing", web_search=web_search, label="categories"))
     save_markdown_docx(text, book.root / f"Categories - {book.file_title}.docx", f"Categories — {book.title}")
     print("  ✓ Categories saved")
