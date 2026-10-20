@@ -1,0 +1,58 @@
+## Parameter Substitutions for Prompt Customization  
+Use the following values to replace their corresponding placeholders throughout this prompt to ensure accurate and complete generation of the book subtitles.
+
+- book_title = [BOOK TITLE]
+
+## Instructions to Generate a High-Converting, Amazon-Compliant Subtitle
+
+**IMPORTANT COMPLIANCE RULES:**  
+Before you start, carefully follow these guidelines to ensure the subtitle is not flagged or blocked by Amazon’s review system:
+
+- **Avoid all risky phrases or patterns** that imply *guaranteed results, success rates, or medical claims* (e.g., “pass on first try,” “proven methods,” “X% success,” “cure,” “no-fail,” etc.).  
+- Do not use **numerical performance claims** (e.g., “40 in 1,” “100%,” “X times more effective”).  
+- Avoid **absolute promises** and instead use **probability, potential, or supportive language** (e.g., “can help,” “designed to support,” “may improve,” “practical tools to…”).
+- Make sure **title, subtitle, and cover** remain consistent and non-misleading.
+
+---
+
+### 1) Subtitle: Benefits, Pain Points, Keywords  
+Hi ChatGPT, I’m crafting the subtitle for my non-fiction book titled [BOOK TITLE].  
+I need your help to generate a **powerful yet policy-compliant subtitle** that resonates with my audience and maximizes discoverability.  
+Please provide:  
+- 8 **highly relevant, widely searched keywords** related to my book’s topic (Amazon & SEO optimized)  
+- 8 **desired benefits or transformations** readers hope to achieve after reading the book  
+- 8 **major pain points** (frustrations, struggles, or challenges) within this niche
+
+Ensure all keywords reflect real search queries and **do not contain risky terms** such as “guaranteed,” “proven,” or “cure.”
+
+---
+
+### 2) Subtitle: Draft  
+ 
+I need 8 subtitle variations for my book titled [BOOK TITLE]. Follow these rules:  
+
+1. **Title Consistency:** The main title must remain unchanged.  
+2. **Compliance:** Avoid any wording that suggests guaranteed outcomes, specific success rates, or medical results.  
+3. **High Conversion:** Use persuasive benefits and relatable pain points while keeping language factual and supportive.  
+4. **SEO-Optimized:** Include high-ranking keywords naturally.  
+5. **Clarity & Engagement:** Each subtitle must be clear, compelling, and under **200 characters including spaces**.
+
+---
+
+### 3) Subtitle Copywriting – Final Optimization  
+Hi ChatGPT,  
+
+I have my main title: [BOOK TITLE]  
+I need you to rewrite the subtitle into **8 compliant, high-converting variations** following these principles:
+
+- Start with the book’s **unique selling proposition**  
+- Emphasize *ease, speed, and practical value*  
+- Use **supportive phrasing** (e.g., “can help,” “may support,” “step-by-step methods”)  
+- Avoid risky language or patterns flagged by Amazon  
+- Keep it **clear, logical, and conversion-focused**
+
+For example, instead of:  
+❌ “Proven system to cure anxiety in 7 days”  
+✅ “A practical guide to managing anxiety naturally in less than a week”
+
+Output each variation in **markdown format**, with explanations of the copywriting techniques used.

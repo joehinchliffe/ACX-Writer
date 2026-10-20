@@ -1,0 +1,16 @@
+# Secrets — never commit API keys
+anthropic_key.txt
+*_key.txt
+key.txt
+.env
+
+# Generated books
+output/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# macOS
+.DS_Store

@@ -1,0 +1,91 @@
+## Cover Brief Generation
+
+### Parameter Substitutions for Prompt Customization
+
+Create a comprehensive cover brief for the non-fiction book "[extract from Book Outline: Title]: [extract from Book Outline: Subtitle]" based on the following information:
+
+**Book Data:**
+
+- Title: [extract from Book Outline: Title]
+- Subtitle: [extract from Book Outline: Subtitle]
+- Pen Name: [to be inserted]
+- Series Name: [to be inserted (optional)]
+- Trim Size: [to be inserted]
+- Lead Magnet(s): [to be inserted (optional but suggested)]
+- Interior Type: [to be inserted (B/W or Standard Color Edition)] - in case of color book we showcase it in the cover with labels like “color edition” “full color edition” “full color images”
+- Illustrations: [to be inserted (only accept "yes"/"no" or a number > 0)]
+- Cover main color: [to be inserted (optional)]
+- Cover Types (see below for detailed instructions):
+
+<cover_types_instructions>
+##### Instructions for AI for choosing the right Cover Types:
+
+Analyze the cover types presented in the provided document `CoverTypes_final.docx` and select the most appropriate one for the specified non-fiction book. Your response should include:
+1. The recommended cover type from the document
+2. A brief explanation of why this cover type suits the book's content, audience, and purpose
+3. Specific design elements that would make this cover type effective for the book
+4. In case of cover with photos, note that each of these cover types can feature either a single photo or multiple photos: if applicable for the type of cover you've chosen, specify how many photos the cover should have
+
+Do not generate new cover designs. Instead, choose from the existing cover types in the document and explain your reasoning based on:
+- The book's subject matter and content
+- The target audience and their expectations
+- Industry standards for similar non-fiction books
+- Visual appeal and professionalism
+- Clear communication of the book's purpose and value proposition
+
+---
+
+###### Usage:
+1. Provide the document containing cover type examples
+2. Specify the non-fiction book title and any relevant details about its content and target audience
+3. The AI will analyze the cover types and select the most appropriate one with an explanation
+</cover_types_instructions>
+
+**Cover Requirements:**
+
+- Cover main color: [from above **book data**]
+- Cover palette: [generate a set of 3-5 Hex HTML color codes based on the cover main color to be used in the cover]
+- Book title should be 30% or more of the cover and stand out (good contrast) from the background main color
+- Type of Cover: [follow the instructions in **book data** for the Cover Types and generate here the content]
+- Additional information: [extract from Book Outline: Key Selling Points]
+
+**Back Cover Requirements:**
+
+- Book Genre: [extract from DRP: Preferred Genre]
+- Will the book has a series: [to be inserted]
+- Brief description: [extract from Book Outline: Book Description]
+- Key objects/themes: [extract from DRP: Key Visual Elements]
+- Setting: [extract from Book Outline: Setting]
+
+**DRP Analysis:**
+
+- Target audience: [extract from DRP: Target Audience Description]
+- Primary needs: [extract from DRP: Primary Audience Needs]
+- Pain points: [extract from DRP: Audience Pain Points]
+
+**Competitor Analysis:**
+
+- Analyze the following competitor covers (extract from DRP if provided in the file, otherwise ask the user to add them):
+  - [Competitor 1]
+  - [Competitor 2]
+  - [Competitor 3]
+
+Generate a cover brief that differentiates this book from competitors while appealing to the target audience.
+If the DRP or Book Outline Draft are not uploaded, do not proceed and ask the user to upload them first.
+
+### Your Task is using the above instructions and analysis to generate the data below:
+1. Cover Type: What kind of template? (Can be more than 1 and must be chosen according to the instructions above about the Cover Type selection)
+  - Photographic Realistic
+  - Illustrated
+  - Graphic
+  - Multiple templates
+  - Other (Please elaborate, e.g. I want a graphic solo-text cover or I want a photographic realistic template with multiple images)
+2. Cover Colors (all hex html colors)
+  - Main Color
+  - Color Palette (3-5 colors, based on the main color)
+3. If the book is in the color edition, suggest adding a ribbon on the cover or a badge that says "Full Color" or something similar.
+4. Cover Brief Description: 200 to 350 words that describe how you want to have your cover to make it unique and stand out from the competition.
+
+DO NOT OUTPUT ANYTHING ELSE, JUST THOSE 4 POINTS
+
+If the `Book Outline`, `DRP` and `CoverTypes` files are not provided, do not proceed and asd the user to upload them first.

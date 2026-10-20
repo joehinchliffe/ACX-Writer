@@ -1,0 +1,193 @@
+You have **two documents**:
+1. **DRP** (Dream Reader Persona and related research).  
+2. **Book Outline** (detailed outline for the upcoming manuscript).
+
+**From these documents, you need to extract information and fill in specific fields to populate the following sections** (originally derived from “Duplicate_Book Outline Template.docx”):
+
+## SECTION 1: Manuscript Details & Brand Identity
+
+#### **1.1 Manuscript Information**
+- **Book Title**  
+- **Book Subtitle**
+
+*(Extract this information from both the DRP and the Book Outline. If no clear title or subtitle is given in either document, mark them as “N/A.”)*
+
+#### **1.2. Manuscript’s Objectives**
+- **What are the top 3 goals of the manuscript?**
+- **What is the manuscript about?**  
+- **What are the key reader takeaways?**  
+- **What are the questions readers want to answer by reading this manuscript?**  
+
+*(Focus on the DRP for this, but if the Book Outline also clarifies goals or objectives, include that information as well. If there is more than one goal, list them all. If no information is available, mark as “N/A.”)*
+
+## SECTION 2: Audience Analysis & Brand Positioning
+
+#### **2.1. Defining the Target Audience**
+- **Age Groups**: Choose all applicable from the follwoing list only:
+```age_groups
+Toddler
+Teen
+Student
+Women
+Other
+Child
+General adult
+Parent
+Men
+```
+- **Audience Interests**: What draws them to this book? What will they gain from reading it? What Impression do you hope to have on them?
+
+#### **2.2. Reading Level & Writing Style
+- **Reading Level**: Choose **only one**: Basic, Intermediate, or Advanced, based on the `Reading Level Guidelines` below
+- **Writing Style**: Select **one or more** from the `Writing Style Guidelines` below providing, for each one, the writing style name (eg. Formal) and Common Niches for that writing style, specific of this book.
+
+*(Evaluate the DRP and Book Outline to decide which reading level and writing style(s) best fit. If it’s unclear, mark as “N/A.”)*
+
+#### **2.3. Brand Positioning & Differentiation**
+Under this section, you must extract from the DRP (and Book Outline if relevant) the following information regarding the competition in this niche:
+
+1) **About the Competition** (from DRP)
+   - 1)        What are the bestsellers in the niche and topic of your next book? (List each competitor book with these mandatory detaild: `name`, `author`, `link`)
+   Note: find the list in the DRP document (start searching in `key players` or `competitor books`) all competitors and make sure the links you extract are correct.
+
+2) **Reading summaries** (the table of contents in book outline, and reviews in DRP can help paint a picture of the strengths and weaknesses of your competition and provide inspiration for your book)
+
+**Strengths**
+   - Summaries or highlights from DRP that showcase what these competing books do well  
+
+**Weaknesses**  
+   - Any noted flaws or missing elements from the competing books as mentioned in the DRP  
+
+
+---
+
+### Reading Level Guidelines
+
+Use these definitions to identify **one** reading level that best matches the manuscript’s complexity. If no clear match emerges, mark as “N/A.”
+
+1. **Basic Reading Level (6-7)**  
+   - Intended for younger readers or those just starting to read independently.  
+   - Simple language, short sentences, limited dense information, restricted vocabulary.  
+   - Examples: Children’s books, basic manuals.  
+   - Common Terms: Beginner, Early Learner, Children’s Non-Fiction.  
+   - Typical Titles: “Sport Stories for Kids”
+
+2. **Intermediate Level (8-10, most common)**  
+   - Suited for readers with a good understanding of language and text structure but not yet experts.  
+   - More detailed coverage, richer vocabulary, introduces more complex concepts simply.  
+   - Examples: Basic psychology or philosophy, practical self-improvement guides.  
+   - Common Terms: Intermediate, Young Adult (YA), Guidebooks, Practical Non-Fiction.  
+   - Typical Titles: “How to Stop Procrastination”
+
+3. **Advanced Level (11-12)**  
+   - For experienced readers comfortable with complex or technical concepts and rich vocabulary.  
+   - Covers topics in-depth, using sophisticated language and academic references.  
+   - Examples: Academic books, professional manuals, research-based writing.  
+   - Common Terms: Advanced, Scholarly, Academic, Professional.  
+   - Typical Titles: “The Selfish Gene: Understanding Evolutionary Biology”
+
+*(Choose **only one** level that best applies.)*
+
+---
+
+### Writing Style Guidelines
+
+Select **one or more** styles from the list below based on the content and tone suggested by the DRP and Book Outline. If no clear style is indicated, mark as “N/A.”
+
+1. **Formal**  
+   - Professional, precise; avoids contractions, slang, or colloquialisms.  
+   - Common Niches: Business, Finance, Science, Technology.  
+
+2. **Informal**  
+   - Relaxed, conversational; may use colloquial expressions and personal touches.  
+   - Common Niches: Personal Development, Teens/Young Adults, Creative pursuits.  
+
+3. **Serious**  
+   - Straightforward, no-nonsense; avoids humor or fluff.  
+   - Common Niches: Psychology, Health, Medicine.  
+
+4. **Humorous**  
+   - Uses wit, jokes, or satire to engage; must be audience-appropriate.  
+   - Common Niches: Entertainment, comedic takes on daily life, parenting.  
+
+5. **Authoritative**  
+   - Clear, confident, and directive; conveys expertise and credibility.  
+   - Common Niches: Investing, Money Management, Technology, Computers.  
+
+6. **Supportive/Empathetic**  
+   - Reflects emotions and encourages; fosters a deeper connection with readers.  
+   - Common Niches: Self-Help, Motivational, Health/Wellness, Faith-Based.  
+
+7. **Open/Vulnerable**  
+   - Shares personal experiences and emotions; introspective.  
+   - Common Niches: Memoirs, Life Coaching, personal stories.  
+
+8. **Friendly Casual**  
+   - Feels like chatting with a friend; warm and engaging.  
+   - Common Niches: Travel Guides, Hobby Books, Children’s Educational Content.  
+
+9. **Personal**  
+   - Similar to friendly casual but with more individual reflections and anecdotes.  
+   - Common Niches: Relationships, Dating Advice, Motivational, Addiction Recovery.  
+
+10. **Narrative**  
+   - Storytelling-based, using characters, settings, anecdotes for immersion.  
+   - Common Niches: Historical topics, Kids’/YA Fiction, Cultural/Social issues, Personal Development.
+
+---
+
+
+### **Your Task**
+
+1. **Read and analyze** the **DRP** and **Book Outline** documents.  
+2. **Extract** only the relevant details to fill the fields below:
+   - **Manuscript Details & Brand Identity** (Book Title, Book Subtitle)  
+   - **Manuscript’s Objectives** (Main Goals/Objectives)  
+   - **Audience Analysis & Brand Positioning** (Target Audience, Reading Level, Writing Style)  
+   - **Brand Positioning & Differentiation** (Bestsellers in the niche, Competition Strengths, Competition Weaknesses)  
+3. **Match** each piece of extracted data to its corresponding field.  
+4. For **Reading Level**, choose **only one** (Basic, Intermediate, or Advanced).  
+5. For **Writing Style**, select **one or more** from the list above.  
+6. If multiple references appear for the same field, include them all (or choose the one that best fits if they conflict).  
+7. If no information is found for a particular field, mark it as “N/A.”  
+
+---
+
+### **Desired Output Structure** 
+
+The output must be formatted using markdown (not in a code block), and must be consistent with the structure below. Do **not** use canvas. 
+
+```
+{
+  "Manuscript Details & Brand Identity": {
+    "Book Title": "...",
+    "Book Subtitle": "..."
+  },
+  "Manuscript's Objectives": {
+    "Main Goals": [
+      "...",
+      "...",
+      "..."
+    ]
+  },
+  "Audience Analysis & Brand Positioning": {
+    "Target Audience": "...",
+    "Reading Level": "...",
+    "Writing Style": ["...", "..."]
+  },
+  "Brand Positioning & Differentiation": {
+    "Bestsellers in the Niche": ["...", "...", "..."],
+    "Competition Strengths": ["...", "..."],
+    "Competition Weaknesses": ["...", "..."]
+  }
+}
+```
+
+---
+
+### **Desired Output Format**
+The output must be formatted using markdown, not as json and not in a code block, and MUST adhere to the above structure.
+**Do not ever use canvas when answering.**
+
+
+### Start **Your Task**

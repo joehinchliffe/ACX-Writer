@@ -1,0 +1,55 @@
+# Book Description Creation Prompt
+
+## Input Requirements
+- Book Title: [Extract from Book Outline]
+- Topic: [Extract and elaborate from Book Outline]
+- Author Name: [Extract from Book Outline]
+
+## Mandatory Files
+- DRP (Dream Reader Persona)
+- Book Outline
+
+## Goal
+Create an engaging, SEO-friendly, **policy-compliant** description (300–400 words) that speaks directly to the ideal reader’s needs. The description must:
+
+- Avoid **absolute claims** or **guaranteed results** (e.g., “will cure,” “guaranteed success,” “proven results”).  
+- Use **supportive and factual language** (e.g., “can help,” “may support,” “practical methods to improve…”).  
+- Avoid unverifiable statistics, percentages, or success rates.  
+- Avoid misleading performance terms (e.g., “no-fail,” “pass first try,” “science-backed cure,” “40-in-1”).  
+
+---
+
+## Structure (Five Segments)
+
+{
+  "structure": {
+    "attention_grabber": {
+      "description": "Open with a compelling question or statement about the reader's main desire or struggle — without implying guaranteed results.",
+      "alternatives": "Provide 8 alternative opening lines."
+    },
+    "connection_credibility": {
+      "questions_statements": "Present exactly 3 statements or questions reflecting the audience's main pain points (from DRP).",
+      "credibility": "Reinforce why this book (and author) is a reliable resource, referencing insights from the Book Outline — without making unverifiable claims."
+    },
+    "teaser_points": {
+      "highlights": "List 15 highlights of what readers can learn or achieve (e.g., strategies, methods, techniques).",
+      "emphasis": "Emphasize benefits, practical tools, and results as potential outcomes, not guaranteed promises.",
+      "format": "Use concise headings or short impactful phrases."
+    },
+    "overcoming_doubts": {
+      "objections": "Address reader doubts realistically.",
+      "solutions": "Show how the book offers practical, achievable solutions — avoid 'guaranteed success' language."
+    },
+    "call_to_action": {
+      "cta_options": "Provide strong but compliant CTAs (e.g., 'If you're ready to take the next step toward...', 'Discover strategies that can help you...')."
+    }
+  }
+}
+
+## Additional Guidelines
+- Incorporate SEO keywords naturally.  
+- Do not use overpromising or trademarked terms.  
+- Use **natural, human-sounding copywriting** and avoid AI clichés.  
+- Format with bold for critical points and avoid keyword stuffing.  
+- If the book includes health-related content, consider adding a **standard disclaimer** at the end.
+- It is imperative that you do not use emojis.

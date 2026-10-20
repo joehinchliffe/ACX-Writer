@@ -1,0 +1,139 @@
+"# Instructions for Book outline draft generation
+
+## Mandatory files to upload
+If any of the following files is not present, you have to require the user to upload them, or you cannot proceed with the book outline generation.
+-   DRP: file containing info on the Dream Reader Persona and Target audience.
+
+## Parameter Substitutions for Prompt Customization  
+Use the following values to replace their corresponding placeholders throughout this prompt to ensure accurate and complete generation of the book outline draft.
+
+-   book_title = [TITLE]
+-   book_subtitle = [SUBTITLE]
+-   total_word_count = [WORD COUNT]
+-   min_word_count_per_chapter = 2000
+-   max_word_count_per_chapter = 5000
+-   number_of_chapters = [NUMBER]
+-   english_style = [ENGLISH TYPE, STYLE TYPE]
+
+**Output Format
+-   Output in a structured human readable way utilizing the below yaml as template to write a human readable formatted document containing the outline draft. DO NOT OUTPUT YAML, only use it as template for the structure of the outline draft.
+-   If the number of chapters is > 5, write until chapter 5 and then ask me to continue the next 5 chapters (or until the end in case there are less than 5 chapters to finish the book outline draft).
+-   Only write the content of the outline draft, excluding any extraneous content, phrases, comments, or instructions beyond the direct outline structure.
+-   NEVER write placeholders and don't add your comments to the book outline's draft.
+-   Don't repeat the same content in the outline draft.
+-   Rules for creating chapters and sections:
+  -   Every chapter must have a minimum of 3 sections.
+-   Process of creating chapters and sections:
+  -   1. Think ahead of how to divide the content of the book into chapters in a logical way and keeping in mind the total word count and the word allocation per chapter (average).
+  -   2. For every chapter:
+    -   2.1. Think ahead of what to write in the introduction of the chapter.
+    -   2.1. Given the introduction of the chapter, think ahead of how to divide the content of the chapter into sections in a logical way
+    -   2.3. After the introduction, distribute the remaining word allocation per chapter to each section in a way that the sum of all section and the chapter introduction will be equal to the word allocation per chapter (average).
+  -   3. Repeat the process for all chapters.
+  
+### Data Collection (Initial Data):
+
+-   **Book Title:**  `{{ book_title }}`
+-   **Book Subtitle:**  `{{ book_subtitle }}`
+-   **Total Word Allocation:**  {{ total_word_count }}
+-   **word allocation per chapter:**
+    -   Average:  calculated as `round(total_word_count/number_of_chapters)
+    -   Minimum:  {{ min_word_count_per_chapter }}
+    -   Maximum:  {{ max_word_count_per_chapter }}
+-   **Number of Chapters:**  {{ number_of_chapters }}
+-   **Tone and Style:**
+    ```
+    {{ tone_and_style }}
+    ```
+-   **DRP** (Dream Reader Persona): Due to its size, the complete DRP is available in the following file for reference.
+    REMEMBER to access this file during each step of the book outline generation process to understand better the reader persona, his/her needs, goals, and challenges, and to create the best book outline for that persona accordingly.
+        -   **Dream Reader Persona (DRP) Summary**: extract all personal data from the DRP
+        -   **Target audience**: extract it from the DRP
+
+
+## Instructions for Generating the Book Outline Draft
+
+**Book Outline Draft Structure**:
+
+Remember, the essence of this step is to establish the guidebook's blueprint, focusing on the chapters and their sections with an emphasis on title creation. Observe these instructions when formatting the YAML outline drpft:
+Output exactly the following YAML structure:
+
+```yaml
+book_outline_drpft:
+  book_title: ""{{ book_title }}""
+  book_subtitle: ""{{ book_subtitle }}""
+  total_word_count: ""{{ total_word_count }}""
+  min_word_count_per_chapter: ""{{ min_word_count_per_chapter }}""
+  max_word_count_per_chapter: ""{{ max_word_count_per_chapter }}""
+  avg_word_count_per_chapter: ""{{ avg_word_count_per_chapter }}""
+  book_introduction: ""The book introduction (1000 Word Count)""
+  chapter_outlines:
+    - number: 1
+      title: ""Chapter 1 Title ([average word count per chapter] Word Count)""
+      word_count: [average word count per chapter]
+      introduction: ""Introduction to Chapter 1 ([n. words, between 400 and 800] Word Count)""
+      sections:
+        - section_number: ""1.1""
+          title: ""Section Title ([section's word count allocation] Word Count)""
+        - section_number: ""1.2""
+          title: ""Section Title ([section's word count allocation] Word Count)""
+        # ... Additional sections
+        - section_number: ""1.n""
+          title: ""Section Title ([section's word count allocation] Word Count)""
+    # ... Additional chapters
+    - number: {{ number_of_chapters }}
+      title: ""Chapter {{ number_of_chapters }} Title ([average word count per chapter] Word Count)""
+      word_count: [average word count per chapter]
+      introduction: ""Introduction to Chapter {{ number_of_chapters }} ([n. words, between 400 and 800] Word Count)""
+      sections:
+        - section_number: ""{{ number_of_chapters }}.1""
+          title: ""Section Title ([section's word count allocation] Word Count)""
+        - section_number: ""{{ number_of_chapters }}.2""
+          title: ""Section Title ([section's word count allocation] Word Count)""
+        # ... Additional sections
+        - section_number: ""{{ number_of_chapters }}.n""
+          title: ""Section Title ([section's word count allocation] Word Count)""
+  book_conclusion: ""The Book Conclusion (1000 Word Count)""
+```
+
+
+**DRP Analysis
+-   the outline drpft must be tailored to a given persona. Analyze the uploaded DRP file to achieve that objective. the DRP file is mandatory and without it you cannot proceed with the outline drpft.
+
+**Structure explanation**:
+-   The outline drpft includes the book title, subtitle, total word count, introduction, chapter outlines, and conclusion.
+-   Each chapter should have an introduction and a title, with a word count that meets the average word count per chapter, which is {{ avg_word_count_per_chapter }} words.
+-   Each chapter should have a minimum of 3 sections and a maximum of 8 sections, depending on the total word count and the word allocation per chapter.
+-   Each section title should be descriptive of its content and have a word count that meets the section's needs (within the word count allocation for the chapter).
+-   You MUST always replace the placeholders within the square brackets with the actual content or values!
+
+**Word Count Management**:
+-   Ensure that each section title includes the word count in parentheses, eg. `(600 Word Count)`.
+-   The word count per section is calculated based on the (total word count allocated to the chapter - the word count of the chapter introduction) divided by the number of sections within that chapter.
+-   First calculate the word count per section, then distribute the word count per section in a way that the most important sections get the highest word count and the least important sections get the lowest word count, keeping in mind that the sum of all sections and the chapter introduction will be equal to the word allocation per chapter (average).
+-   The word count for the section titles should be within the range of 450 to 1000 words.
+-   The word count for the chapter introduction should be within the range of 400 to 700 words.
+-   The word count for the chapter title should be {{ avg_word_count_per_chapter }} words.
+-   The word count for the book introduction and conclusion should be 1000 words each.
+
+**Before start writing, ensure comprehension and strict adherence to all above and to these pivotal guidelines**:
+  1. Adherence to the `Strict Content Generation Rule for the drpft outline` outlined in your instructions is critical. This rule is central to maintaining the quality and coherence of the outline.
+  3. Enumerate all chapters and their sections, focusing solely on titles and their word count at this stage. It's vital to have a holistic view of the guidebook's structure from start to finish.
+  5. When assigning the word count to each section title, accounts for the word count of the chapter's introduction and the chapter word count (total words available for the sections = chapter word count - word count of the chapter's introduction).
+  6. Try to keep the word count for the sections within the range of 400 to 800 words and generate enough sections to reach the the chapter word count, considering a minimum of 3 and a maximum of 6 sections
+  7. Distribute the word count based on the topic's complexity and importance. The word count should be distributed unevenly across the sections, with the most important sections receiving the highest word count.
+  8. Remember that introduction and conclusion chapters are not divided into sections. They are standalone chapters.
+  9. The outline draft should be comprehensive, spanning from Chapter 1 to Chapter {{ number_of_chapters }}, without omissions of any chapters, titles, or section titles (bear in mind that Intro and Conclusion are excluded from number of chapters, meaning a book with number_of_chapters = 8 has 8 chapters + Intro + Conclusion).
+  10. Output the outline drpft as a valid YAML file, adhering to the structure provided above. This structure is formatted specifically for your tasks and should be followed meticulously.
+  11. Don't start writing the outline draft until you have a clear understanding of the book's content and structure. This understanding is crucial to the creation of a coherent and comprehensive outline.
+  12. Use `{{ english_style | default(""american"") }}` English when generating the titles of the outline drpft.
+  13. Extract the target audience from the uploaded DRP file and craft a book outline that is relevant to them.
+  14. Remember that DRP file is mandatory. if has not been uploaded, ask the user to do it
+  
+### Output generation process
+-   First output the data you have collected and calculated in `Data Collection (Initial Data)` section and ask the user if they are correct or need adjustment.
+-   Then, if the user answer they are correct, start generating the book outline draft, following all of the above rules at every step of the process.
+-   NEVER EVER use canvas throughout the book outline draft generation process.
+
+
+#### Draft the Outline"

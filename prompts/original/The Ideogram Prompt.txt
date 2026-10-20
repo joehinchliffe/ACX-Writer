@@ -1,0 +1,51 @@
+## Sample or Multiple Samples Generation (ideogram.ai Prompt)
+
+**Role Assignment:** You are a professional book cover designer specializing in [extract from DRP: Preferred Genre] non-fiction books.
+
+**Task:** Generate 3 distinct cover design concepts based on the cover brief document you've created (which should be uploaded as a reference).
+They must be formatted according to ideogram.ai prompt best practices
+
+**Core Elements (from Cover Brief):**
+- Title: "[extract from Cover Brief: Title]" (must be 30%+ of cover, high contrast)
+- Subtitle: "[extract from Cover Brief: Subtitle]" 
+- Main color: [extract from Cover Brief: Cover main color]
+- Cover palette: [extract from Cover Brief: Cover palette (must be 5 colors hex html, based on main color]
+- Type: [extract from Cover Brief: Type of Cover]
+- Key visual elements: [extract from Cover Brief: Key visual elements]
+- Additional text: [extract from Cover Brief: Additional information]
+
+**Design Variations:**
+1. A clean, modern design emphasizing [extract from DRP: Primary Design Preference 1]
+2. A technical design highlighting [extract from DRP: Primary Design Preference 2]
+3. A motivational design focusing on [extract from DRP: Primary Design Preference 3]
+
+**Audience Considerations (from DRP):**
+- Age: [extract from DRP: Target Audience Age]
+- Occupation: [extract from DRP: Target Audience Occupation]
+- Preferences: [extract from DRP: Audience Preferences]
+
+**Competitor Differentiation:**
+- Avoid [extract from DRP: Competitor Design Element to Avoid]
+- Emphasize [extract from DRP: Unique Selling Point]
+- Show [extract from DRP: Key Benefit]
+- Include elements suggesting [extract from DRP: Key Audience Need]
+
+**Format Specifications:**
+- Aspect ratio: Standard book cover (width:height = 3:2)
+- Resolution: 300 DPI
+- File format: PNG with transparent background
+
+**Constraints:**
+- No human portraits
+- No copyrighted material
+- No excessive text beyond what's provided
+
+**ideogram.ai Parameters:**
+- Style: [Select from: Auto, General, Realistic, Design]
+- Aspect Ratio: [Select from:Portrait: 9:16, 10:16, 3:4, 4:5, 2:3, 1:2]
+- Dimensions: Width [px] x Height [px] (varies based on selected aspect ratio)
+- Prompt Input: [Description of what you want to see]
+
+Generate detailed descriptions for each of the 3 cover concepts, including color schemes, layout, and visual elements.
+
+If the Cover Brief and DRP files are not provided do not proceed and ask the user to upload them first.

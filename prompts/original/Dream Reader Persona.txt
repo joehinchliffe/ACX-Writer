@@ -1,0 +1,119 @@
+"## Parameter Substitutions for Prompt Customization
+Use the following values to replace their corresponding placeholders throughout this prompt to ensure accurate and complete generation of the DRP.
+book_title = [BOOK TOPIC/TITLE]
+book_category = [BOOK CATEGORY]
+
+# Instruction for DRP (Dream Reader Persona) Generator
+I want you to act like an expert in audience research. I am currently building a customer avatar for a person interest to Buy a book about the {{ book_category }} where I'm going to sell my book '{{ book_title }}'
+- knowledge retrieval:
+- You must gather useful information from your custom knowledge and uploaded files if there are, then use those information to reason about the content you have to generate. Search until you have found enough information to generate the content as requested; Complement the writing using your internal knowledge, research, reasoning, and creativity to generate the DRP.
+
+# Trigger Commands
+
+## Start Generating the DRP: Generate the DRP following all the instructions and details provided here and in the user prompt; Format your final answer as a structured human readable document.
+
+*Task: Detailed Dream Reader Persona Creation for a Book*
+
+*Book Information*:
+*Title*: {{ book_title }}
+
+*Analysis Criteria*:
+1. *Reader Profile*
+2. *Decision Drivers*
+3. *Success Factors*
+4. *Perceived Barriers*
+5. *Buyer Journey*
+
+*Research Sources*:
+- SEO tools, Digital Advertising Databases, Social Media, Online Communities
+
+*Competitor Analysis*:
+- if available, analyze the attached file containing additional written information, graphs, and images like Amazon bad reviews and Quora, YouTube, and Facebook information.
+
+*Instructions for Dream Reader Persona (the DRP)*:
+Make sure to include the following in your response:
+- Book Data (Title): Use the book information provided above.
+- Personal Data (Full name, Age, Gender (Male/Female only), Job Title, Marital Status, Annual Income, Location, Pets (cats/dogs/etc. and how many)): Generate fictional, but realistic data for the buyer persona, considering the book's target audience.
+- Biography (Experience & Training, Current Job, Private life, Hobbies and Free Time, Influencers, podcasts they listen to, Books/magazines they read, Conferences they attend, Websites/ apps/blogs of interest): Use the insights from the competitor analysis to create the biography.
+- Personality: List of personality traits.
+- Lingo: Identify common words, phrases, and slang used by potential buyers. Provide a list of the most frequently occurring terms along with their context and sentiment.
+- Criticalities and Problems: List of criticalities and problems about the buyer persona that the book can solve.
+- Goals (Primary Goal and Secondary Goal).
+- Thoughts Feelings and Actions (What does he/she think, see, hear, say and do): Don't be banal in this section, be specific and detailed about the buyer persona's thoughts, feelings, and actions.
+- Frustrations and main pain points (What are they worrying about, what are their real fears): use data from the uploaded file if available or generate it with the information you have.
+- What can we do? (To help their goal, to help overcome their challenges and frustrations).
+- Common objectives (Why wouldn't they buy?): use data from the uploaded file if available or generate it with the information you have.
+- Archetypes: List of archetypes names (without description) that are relevant to the buyer persona.
+- How to communicate to the Target: List of communication strategies to reach the target audience.
+- Additional informations: Any other relevant information that you think is important to include in the DRP.
+- Summary of data extracted from the competitor analysis (if the file is available): Summarize the data extracted from the competitor analysis file in this attribute (don't include citations); if you couldn't access the file or find any relevant information, state it in the attribute.
+
+Note: STRICTLY follow the Pydantic model structure provided below for the output.
+the Pydantic model is provided to help you understand the structure of the output. You should not modify the model. The main class is 'Drp’ and it contains all the other classes as attributes.
+
+*Pydantic Model for Parsing output document*:
+
+```python
+from pydantic import BaseModel
+from typing import List, Optional
+class Drp(BaseModel):
+book: BookData
+personal_data: PersonalData
+biography: Biography
+personality: List[str]
+lingo: [str]
+criticalities_and_problems: List[str]
+goals: Goals
+thoughts_feelings_actions: ThoughtsFeelingsActions
+frustrations_and_main_pain_points: List[str]
+what_can_we_do: WhatCanWeDo
+common_objectives: List[str]
+archetypes: List[str]
+how_to_communicate_to_the_target: List[str]
+additional_informations: Optional[List[str]]
+summary_of_data_extracted_from_competitor_analysis: Optional[str]
+class BookData(BaseModel):
+title: str
+class PersonalData(BaseModel):
+full_name: str
+age: int
+gender: str
+job_title: str
+marital_status: str
+annual_income: str
+location: str
+pets: List[str]
+class Biography(BaseModel):
+experience_and_training: str
+current_job: str
+private_life: str
+hobbies_and_free_time: List[str]
+influencers: str
+podcasts_they_listen_to: List[str]
+books_magazines_they_read: List[str]
+conferences_they_attend: str
+websites_apps_blogs_of_interest: List[str]
+class Goals(BaseModel):
+primary: str
+secondary: str
+class ThoughtsFeelingsActions(BaseModel):
+thinks: str
+sees: str
+hears: str
+says_and_does: List[str]
+class WhatCanWeDo(BaseModel):
+to_help_their_goal: str
+to_overcome_challenges: str
+
+*Output Format*:
+- Output in a structured human readable way, parsing the above pydantic object into a human readable formatted document containing the full DRP. DO NOT OUTPUT the pydantic object, only use it as template for the structure of the DRP.
+- Remember all List[str] should have multiple items.
+- ALL FIELDS in the Pydantic model are mandatory and should be included in the human readable output.
+
+*Important Notes*:
+- before start generating the DRP, only if available, you have to read and analyze the uploaded file (Competitor Analysis).
+- STRICTLY adhere to the Pydantic model structure for the human readable output and include ALL MODEL'S FIELDS with the corresponding data and correct data types. Failing to do so will result in your task being rejected.
+- Provide detailed and specific information in each section of the DRP and write as if you were creating a real buyer persona for a book.
+- NEVER EVER use canvas throughout the DRP generation process.
+
+#### Start Generating the DRP"

@@ -1,0 +1,30 @@
+## Blurb Generation
+
+Create a compelling back cover blurb for **"[extract from Book Description: Title]: [extract from Book Description: Subtitle]"** that:
+
+1. Summarizes the book's content and unique value proposition
+2. Appeals to the target audience described in the Book Description (mandatory file)
+3. Highlights key benefits and advantages of the book
+4. Addresses the main pain points of the target readers
+5. Is concise (100-200 words)
+
+**Key Information to Include (from Book Description):**
+
+- [extract from Book Description: Key Benefit 1]
+- [extract from Book Description: Key Benefit 2]
+- [extract from Book Description: Key Benefit 3]
+- [extract from Book Description: Audience Reassurance]
+
+**Tone and Style (from Book Description):**
+
+- [extract from Book Description: Preferred Tone]
+- [extract from Book Description: Style Considerations]
+
+Generate 3 variations of the blurb with different emphasis:
+1. Focused on [extract from Book Description: Primary Emphasis 1]
+2. Highlighting [extract from Book Description: Primary Emphasis 2]
+3. Emphasizing [extract from Book Description: Primary Emphasis 3]
+
+**Important:**
+- Remove all calls-to-action (CTAs) and focus solely on showcasing the book's benefits
+- If the Book Description file is not provided, do not proceed and ask the user to upload it first
