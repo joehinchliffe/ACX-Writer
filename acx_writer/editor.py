@@ -2,10 +2,16 @@
 
 from __future__ import annotations
 
+import os
+
 from docx import Document
 
 from . import llm
 from .project import Book, render, word_count
+
+# A revision shorter than this share of the draft is discarded and the draft kept,
+# unless the editor's notes asked for big cuts (lower it with EDIT_MIN_RATIO=0.6).
+MIN_KEEP_RATIO = float(os.getenv("EDIT_MIN_RATIO", "0.7"))
 
 REVIEW_SCHEMA = {
     "type": "object",
@@ -84,7 +90,7 @@ def run(book: Book, research: dict, chapters: list[dict], style_guide: str) -> t
                 print(f"    revision came back at {ratio:.0%} of the original length; retrying")
                 if best is None or abs(1 - ratio) < abs(1 - word_count(best) / current):
                     best = text
-            if word_count(best) < 0.7 * current:
+            if word_count(best) < MIN_KEEP_RATIO * current:
                 print("    keeping the unrevised text rather than a much shorter one")
                 return chapter["text"]
             return best
