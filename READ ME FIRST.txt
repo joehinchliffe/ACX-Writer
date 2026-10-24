@@ -1,85 +1,46 @@
 ACX WRITER - writes a complete self-help book with Claude
 =========================================================
 
-It researches the reader, plans the chapters, writes the book, edits it,
-and writes the descriptions, categories and keywords and a cover brief with
-Ideogram prompts. One manuscript works for an Audible (ACX) audiobook and an
-Amazon KDP eBook or paperback.
+It researches the reader, plans the chapters, writes and edits the book,
+and writes the descriptions, categories, keywords and a cover brief. One
+manuscript works for an Audible (ACX) audiobook and an Amazon KDP eBook
+or paperback.
 
 
-WHAT YOU NEED (once)
---------------------
-1. An Anthropic API key with credits: https://console.anthropic.com
-   (Settings > API keys > Create key. Add credits under Billing.)
-   A 20,000-30,000 word book usually costs a few dollars.
+HOW TO USE IT (3 steps)
+-----------------------
+1. Install the Claude desktop app: https://claude.ai/download
+   and sign in. You'll probably need a paid Claude plan (Pro or above)
+   to use its Code tab.
+   On Windows, also install Git for Windows (https://git-scm.com/download/win)
+   and restart the Claude app.
 
-2. Python 3.10 or newer: https://www.python.org/downloads/
-   On Windows, tick "Add python.exe to PATH" on the first install screen.
+2. Unzip this folder somewhere easy to find, like your Documents folder.
 
-3. Optional: Google Drive for Desktop (https://www.google.com/drive/download/)
-   if you want finished books to appear in your Google Drive automatically.
+3. In the Claude app, open the Code tab. Under the message box, choose
+   "Local", then click the folder button next to it and pick this
+   unzipped folder. Then type:
 
+      Help me write a book.
 
-WRITE A BOOK
-------------
-Mac:      double-click "Write a Book (Mac).command"
-          The first time, macOS may say it can't be opened. If so, right-click
-          the file, choose Open, then Open again.
-Windows:  double-click "Write a Book (Windows).bat"
-          If Windows SmartScreen appears, click "More info", then "Run anyway".
+   Claude will ask permission before it runs anything. Click Allow when
+   it does.
 
-The first time it sets itself up (a minute or two) and asks for your API key.
-The key is saved only on your computer, in anthropic_key.txt. Don't share
-that file. Then it asks for:
+Claude walks you through the rest, one step at a time: setting things up,
+getting your Anthropic API key (you'll need an account with a few dollars
+of credit), where to save your books, and your book's title, subtitle and
+pen name. Then it writes the book, which takes around 30-60 minutes, checks
+it, and tells you where the files are.
 
-  - the title, subtitle and pen name
-  - the word count (15000 if you just press Enter)
-  - the folder to save books in. To save straight into Google Drive, use a
-    folder inside your Google Drive for Desktop folder, for example
-      Mac:     ~/Library/CloudStorage/GoogleDrive-you@gmail.com/My Drive/Books
-      Windows: G:\My Drive\Books
-    It remembers this folder for next time.
-
-Leave the window open while it works. A book takes around 30-60 minutes.
-If it stops (no internet, out of credits), just run it again with the same
-title: it carries on from where it stopped.
+Two things to know:
+  - Never paste your API key into the chat. Claude will open a file for
+    you to paste it into, so it stays on your computer.
+  - This needs the Code tab in the Claude desktop app. A normal chat on
+    claude.ai can read these files but can't run them.
 
 
-OR LET CLAUDE RUN IT FOR YOU
-----------------------------
-If you have the Claude desktop app (https://claude.ai/download), open the
-Code tab, choose this unzipped folder, and say for example:
-
-  "This is my book writer. Run it for: title ..., subtitle ...,
-   pen name ..., 20,000 words."
-
-Claude reads the instructions in CLAUDE.md, runs it, checks the finished
-book for slips (names, days, chapter references) and tells you where the
-files are. Set up your API key first by running the launcher above once
-(paste your key, then close the window), or Claude will ask you to.
-Don't paste your key into the chat.
-
-This only works in the Claude desktop app's Code tab or Claude Code, not
-in a normal chat on claude.ai: a normal chat can read the files but
-can't run a book.
-
-
-WHAT YOU GET
-------------
-In <your folder>/<pen name>/<title>/ :
-  <title>.docx                       the finished, edited manuscript
-  Descriptions - <title>.docx        book descriptions for KDP and Audible
-  Categories - <title>.docx          KDP categories, 7 keywords, Audible categories
-  Editorial Report - <title>.docx    what the editor found and changed
-  Drafts/                            the unedited first draft
-  Book Research/                     reader persona, subtitle ideas, outline,
-                                     cover brief and Ideogram prompts
-
-Read the manuscript before publishing. Check any claims about the author,
-any bonus or PDF the book promises, and helpline numbers.
-
-
-CHANGING HOW IT WRITES
-----------------------
-The instructions Claude follows are plain text files in the "prompts" folder.
-prompts/style_guide.md sets the voice of the whole book.
+PREFER NOT TO USE CLAUDE?
+-------------------------
+Install Python (https://www.python.org/downloads/; on Windows tick
+"Add python.exe to PATH"), then double-click "Write a Book (Mac).command"
+or "Write a Book (Windows).bat" and answer its questions.
