@@ -7,14 +7,6 @@ Ideogram prompts. One manuscript works for an Audible (ACX) audiobook and an
 Amazon KDP eBook or paperback.
 
 
-IF YOU GOT THIS FROM GOOGLE DRIVE
----------------------------------
-The six "Cover Types" example images come separately (page-1.jpg to
-page-6.jpg). Put them in this folder's "prompts/cover_types" folder. The
-cover brief uses them to pick a cover style; without them it still works,
-just without the examples.
-
-
 WHAT YOU NEED (once)
 --------------------
 1. An Anthropic API key with credits: https://console.anthropic.com
