@@ -4,8 +4,9 @@ anthropic_key.txt
 key.txt
 .env
 
-# Generated books
+# Generated books and per-computer settings
 output/
+settings.json
 
 # Python
 __pycache__/

@@ -1,0 +1,66 @@
+ACX WRITER - writes a complete self-help book with Claude
+=========================================================
+
+It researches the reader, plans the chapters, writes the book, edits it,
+and writes the descriptions, categories and keywords and a cover brief with
+Ideogram prompts. One manuscript works for an Audible (ACX) audiobook and an
+Amazon KDP eBook or paperback.
+
+
+WHAT YOU NEED (once)
+--------------------
+1. An Anthropic API key with credits: https://console.anthropic.com
+   (Settings > API keys > Create key. Add credits under Billing.)
+   A 20,000-30,000 word book usually costs a few dollars.
+
+2. Python 3.10 or newer: https://www.python.org/downloads/
+   On Windows, tick "Add python.exe to PATH" on the first install screen.
+
+3. Optional: Google Drive for Desktop (https://www.google.com/drive/download/)
+   if you want finished books to appear in your Google Drive automatically.
+
+
+WRITE A BOOK
+------------
+Mac:      double-click "Write a Book (Mac).command"
+          The first time, macOS may say it can't be opened. If so, right-click
+          the file, choose Open, then Open again.
+Windows:  double-click "Write a Book (Windows).bat"
+          If Windows SmartScreen appears, click "More info", then "Run anyway".
+
+The first time it sets itself up (a minute or two) and asks for your API key.
+The key is saved only on your computer, in anthropic_key.txt. Don't share
+that file. Then it asks for:
+
+  - the title, subtitle and pen name
+  - the word count (15000 if you just press Enter)
+  - the folder to save books in. To save straight into Google Drive, use a
+    folder inside your Google Drive for Desktop folder, for example
+      Mac:     ~/Library/CloudStorage/GoogleDrive-you@gmail.com/My Drive/Books
+      Windows: G:\My Drive\Books
+    It remembers this folder for next time.
+
+Leave the window open while it works. A book takes around 30-60 minutes.
+If it stops (no internet, out of credits), just run it again with the same
+title: it carries on from where it stopped.
+
+
+WHAT YOU GET
+------------
+In <your folder>/<pen name>/<title>/ :
+  <title>.docx                       the finished, edited manuscript
+  Descriptions - <title>.docx        book descriptions for KDP and Audible
+  Categories - <title>.docx          KDP categories, 7 keywords, Audible categories
+  Editorial Report - <title>.docx    what the editor found and changed
+  Drafts/                            the unedited first draft
+  Book Research/                     reader persona, subtitle ideas, outline,
+                                     cover brief and Ideogram prompts
+
+Read the manuscript before publishing. Check any claims about the author,
+any bonus or PDF the book promises, and helpline numbers.
+
+
+CHANGING HOW IT WRITES
+----------------------
+The instructions Claude follows are plain text files in the "prompts" folder.
+prompts/style_guide.md sets the voice of the whole book.

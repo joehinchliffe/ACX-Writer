@@ -15,7 +15,7 @@ Everyone uses their own Anthropic API key, so API costs go to whoever runs the b
 3. Connect Google Drive under claude.ai Settings → Connectors.
 4. Start a new session and say: *"Write a book: title …, subtitle …, pen name …, 20,000 words."* Claude follows `CLAUDE.md` from there.
 
-**On your own computer.** Install Python 3.10+, then run the commands below. To have books land straight in Google Drive, install Google Drive for Desktop and add `--output-dir` pointing at a folder inside it (or set `ACX_OUTPUT_DIR`), for example `--output-dir "~/Library/CloudStorage/GoogleDrive-you@gmail.com/My Drive/Books"` on a Mac.
+**On your own computer, no GitHub needed.** Install Python 3.10+ and double-click `Write a Book (Mac).command` or `Write a Book (Windows).bat`. It sets itself up, asks for your API key once (saved only in `anthropic_key.txt` on that computer), then asks for the title, subtitle, pen name, word count and save folder. `READ ME FIRST.txt` walks through it step by step. Or run the commands below yourself. To have books land straight in Google Drive, install Google Drive for Desktop and add `--output-dir` pointing at a folder inside it (or set `ACX_OUTPUT_DIR`), for example `--output-dir "~/Library/CloudStorage/GoogleDrive-you@gmail.com/My Drive/Books"` on a Mac.
 
 ## Run a book
 

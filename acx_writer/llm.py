@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import getpass
 import json
 import os
 import random
@@ -49,6 +50,12 @@ def load_api_key() -> str:
         key = KEY_FILE.read_text().strip()
         if " - " in key:  # old files were saved as "label - sk-ant-..."
             key = key.split(" - ")[-1].strip()
+    if not key and sys.stdin.isatty():
+        print("\nThis needs your Anthropic API key (from console.anthropic.com → API keys).")
+        print("It is saved only on this computer, in anthropic_key.txt.")
+        key = getpass.getpass("Paste your API key (it won't show as you paste) and press Enter: ").strip()
+        if key:
+            KEY_FILE.write_text(key + "\n")
     if not key:
         sys.exit("No Anthropic API key: set ANTHROPIC_API_KEY or create anthropic_key.txt")
     return key
