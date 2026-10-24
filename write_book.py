@@ -3,7 +3,7 @@
 
     python write_book.py --title "The Anxious Attachment Cure" \\
         --subtitle "How to Stop Overthinking, Feel Secure and Build Relationships That Last" \\
-        --pen-name "Clara Voss" --word-count 20000
+        --pen-name "Jane Example" --word-count 20000
 
 Everything is saved under output/<pen name>/<title>/. Each step's result is kept in
 the hidden .work folder there, so re-running the same command after a failure
@@ -16,7 +16,7 @@ from pathlib import Path
 
 from acx_writer import editor, imported, marketing, outline, research, writer
 from acx_writer.docs import save_manuscript_docx
-from acx_writer.project import Book, word_count
+from acx_writer.project import OUTPUT_DIR, Book, word_count
 
 
 def main():
@@ -35,13 +35,16 @@ def main():
                              "generating them (see acx_writer/imported.py for the file names)")
     parser.add_argument("--skip", action="append", default=[], choices=["descriptions", "categories", "cover"],
                         help="Skip a marketing step, e.g. when its document already exists (repeatable)")
+    parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR,
+                        help="Where books are saved (default: output/, or ACX_OUTPUT_DIR). Point it at a "
+                             "Google Drive for Desktop folder to have books sync to Drive.")
     args = parser.parse_args()
 
     for path in args.competitor_cover:
         if not path.exists():
             sys.exit(f"Competitor cover not found: {path}")
 
-    book = Book(args.title, args.subtitle, args.pen_name, args.word_count, args.english)
+    book = Book(args.title, args.subtitle, args.pen_name, args.word_count, args.english, args.output_dir)
     web = not args.no_web_search
     print(f"Book: {book.title} — {book.subtitle}\nBy {book.pen_name} · {book.word_count:,} words\nFolder: {book.root}")
 

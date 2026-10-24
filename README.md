@@ -2,6 +2,21 @@
 
 Writes a complete non-fiction self-help book with Claude Sonnet 5.5: research, outline, first draft, edit, descriptions, categories, and cover brief. One manuscript serves Audible (ACX) narration and Amazon KDP (Kindle and paperback).
 
+## Setting up your own copy
+
+Everyone uses their own Anthropic API key, so API costs go to whoever runs the book. Keys are never stored in the repo.
+
+**With Claude Code on the web (recommended).** Claude runs the script for you and uploads the finished book to your Google Drive.
+
+1. Get access to this repository on GitHub (as a collaborator, or a copy in your own account) and start a Claude Code session on it at claude.ai/code.
+2. In the session's cloud environment settings, add two environment variables:
+   - `ANTHROPIC_API_KEY`: your key from console.anthropic.com (the account needs credits).
+   - `DRIVE_FOLDER_URL`: the link to the Google Drive folder your books should go in.
+3. Connect Google Drive under claude.ai Settings → Connectors.
+4. Start a new session and say: *"Write a book: title …, subtitle …, pen name …, 20,000 words."* Claude follows `CLAUDE.md` from there.
+
+**On your own computer.** Install Python 3.10+, then run the commands below. To have books land straight in Google Drive, install Google Drive for Desktop and add `--output-dir` pointing at a folder inside it (or set `ACX_OUTPUT_DIR`), for example `--output-dir "~/Library/CloudStorage/GoogleDrive-you@gmail.com/My Drive/Books"` on a Mac.
+
 ## Run a book
 
 ```bash
@@ -11,11 +26,11 @@ export ANTHROPIC_API_KEY=sk-ant-...      # or put the key in anthropic_key.txt (
 python write_book.py \
   --title "The Anxious Attachment Cure" \
   --subtitle "How to Stop Overthinking, Feel Secure and Build Relationships That Last" \
-  --pen-name "Clara Voss" \
+  --pen-name "Jane Example" \
   --word-count 20000
 ```
 
-Options: `--english British`, `--competitor-cover cover.jpg` (repeatable; gives the cover brief competing covers to beat), `--no-web-search`, `--skip descriptions|categories|cover`.
+Options: `--output-dir <folder>`, `--english British`, `--competitor-cover cover.jpg` (repeatable; gives the cover brief competing covers to beat), `--no-web-search`, `--skip descriptions|categories|cover`.
 
 ### From existing research and outline
 

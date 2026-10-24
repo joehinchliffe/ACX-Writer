@@ -4,13 +4,16 @@ from __future__ import annotations
 
 import datetime
 import json
+import os
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
 REPO_DIR = Path(__file__).resolve().parent.parent
 PROMPTS_DIR = REPO_DIR / "prompts"
-OUTPUT_DIR = REPO_DIR / "output"
+# Books go to output/ unless ACX_OUTPUT_DIR (or --output-dir) points elsewhere,
+# e.g. a Google Drive for Desktop folder so finished books sync to Drive.
+OUTPUT_DIR = Path(os.getenv("ACX_OUTPUT_DIR") or REPO_DIR / "output").expanduser()
 
 
 def safe_name(text: str) -> str:
@@ -39,10 +42,11 @@ class Book:
     pen_name: str
     word_count: int = 15000
     english_style: str = "American"
+    output_dir: Path = OUTPUT_DIR
     root: Path = field(init=False)
 
     def __post_init__(self):
-        self.root = OUTPUT_DIR / safe_name(self.pen_name) / safe_name(self.title)
+        self.root = Path(self.output_dir).expanduser() / safe_name(self.pen_name) / safe_name(self.title)
         self.work.mkdir(parents=True, exist_ok=True)
 
     @property
