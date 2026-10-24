@@ -1,0 +1,2 @@
+Put the six Cover Types example images (page-1.jpg to page-6.jpg) in this folder.
+The cover brief uses them to choose a cover style.
