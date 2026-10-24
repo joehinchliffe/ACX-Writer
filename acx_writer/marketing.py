@@ -87,6 +87,9 @@ def image_block(path: Path) -> dict:
 def cover(book: Book, research: dict, outline_text: str, competitor_covers: list[Path]):
     print("\n[7/7] Cover brief and Ideogram prompts")
     images = [image_block(p) for p in sorted((PROMPTS_DIR / "cover_types").glob("*.jpg"))]
+    if not images:
+        print("  ⚠ No Cover Types images in prompts/cover_types (page-1.jpg … page-6.jpg). "
+              "The cover brief will be written without the examples.")
     note = ""
     if competitor_covers:
         images += [image_block(p) for p in competitor_covers]

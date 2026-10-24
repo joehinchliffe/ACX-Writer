@@ -17,7 +17,7 @@ Create a comprehensive cover brief for the non-fiction book "{{title}}: {{subtit
 {{outline}}
 </book_outline>
 
-The images attached before this message are pages from the Cover Types reference document. Each page shows one cover type with real examples: Type 1A Photographic, 1B Photographic Multiple, 2A Graphic, 2B Graphic Multiple, 2C Graphic Solo Text, 3A Illustrated.
+The cover types to choose from are: Type 1A Photographic, 1B Photographic Multiple, 2A Graphic, 2B Graphic Multiple, 2C Graphic Solo Text, 3A Illustrated. If images are attached before this message, they are pages from the Cover Types reference document, one page per type with real examples.
 {{competitor_note}}
 
 # Choosing the cover type
