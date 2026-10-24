@@ -45,6 +45,25 @@ If it stops (no internet, out of credits), just run it again with the same
 title: it carries on from where it stopped.
 
 
+OR LET CLAUDE RUN IT FOR YOU
+----------------------------
+If you have the Claude desktop app (https://claude.ai/download), open the
+Code tab, choose this unzipped folder, and say for example:
+
+  "This is my book writer. Run it for: title ..., subtitle ...,
+   pen name ..., 20,000 words."
+
+Claude reads the instructions in CLAUDE.md, runs it, checks the finished
+book for slips (names, days, chapter references) and tells you where the
+files are. Set up your API key first by running the launcher above once
+(paste your key, then close the window), or Claude will ask you to.
+Don't paste your key into the chat.
+
+This only works in the Claude desktop app's Code tab or Claude Code, not
+in a normal chat on claude.ai: a normal chat can read the files but
+can't run a book.
+
+
 WHAT YOU GET
 ------------
 In <your folder>/<pen name>/<title>/ :

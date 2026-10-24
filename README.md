@@ -66,6 +66,6 @@ output/<pen name>/<title>/
 
 ## Customising
 
-All prompts are Markdown files in `prompts/`; edit them freely. `{{name}}` placeholders are filled in by the code. `prompts/style_guide.md` controls the voice of the whole book. The original Nespola prompts these were adapted from are in `prompts/original/`.
+All prompts are Markdown files in `prompts/`; edit them freely. `{{name}}` placeholders are filled in by the code. `prompts/style_guide.md` controls the voice of the whole book. The original Nespola prompts these were adapted from are in `prompts/original/` (not included in shared copies).
 
 Effort per step can be changed with environment variables (`EFFORT_WRITE=high`, etc.; see `acx_writer/llm.py`).
