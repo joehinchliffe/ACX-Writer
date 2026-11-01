@@ -43,7 +43,7 @@ fi
 # ------------------------------------------------------------- 3. system deps
 if ! command -v ffmpeg >/dev/null; then
   say "installing ffmpeg"
-  (apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg sox >/dev/null) \
+  (apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg sox zip >/dev/null) \
     || say "apt ffmpeg failed; will use imageio-ffmpeg"
 fi
 if ! command -v uv >/dev/null; then
