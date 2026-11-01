@@ -1,0 +1,8 @@
+.venv/
+out/
+ab/
+bench/results/
+__pycache__/
+.pytest_cache/
+*.wav
+!examples/**/README.txt

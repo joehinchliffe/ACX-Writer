@@ -1,0 +1,16 @@
+{
+  "title": "The Small Door",
+  "author": "Your Pen Name",
+  "narrator": "Your Narrator",
+  "language": "english",
+  "platform": "acx",
+  "voice": {
+    "wav": "voice.wav",
+    "text": "Put the EXACT words spoken in voice.wav here, word for word, including any slips."
+  },
+  "respell": {
+    "Machiavelli": "Mackiavelli"
+  },
+  "expand_numbers": true,
+  "max_chars": 300
+}

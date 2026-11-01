@@ -2,6 +2,8 @@
 
 Writes a complete non-fiction self-help book with Claude Sonnet 5.5: research, outline, first draft, edit, descriptions, categories, and cover brief. One manuscript serves Audible (ACX) narration and Amazon KDP (Kindle and paperback).
 
+To turn finished manuscripts into ACX-ready chapter MP3s on a rented GPU, see [`narrator/`](narrator/README.md).
+
 ## Setting up your own copy
 
 Everyone uses their own Anthropic API key, so API costs go to whoever runs the book. Keys are never stored in the repo.

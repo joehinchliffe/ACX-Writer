@@ -1,0 +1,10 @@
+qwen-tts==0.1.1
+transformers==4.57.3
+soundfile
+faster-whisper>=1.1
+librosa
+scipy
+hf_transfer
+huggingface_hub[cli]
+num2words
+imageio-ffmpeg
