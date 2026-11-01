@@ -44,8 +44,8 @@ step "4/4 Narrating the book"
 $PY -m narrate.job "$BOOK" --out out $EXTRA
 code=$?
 
-cd out 2>/dev/null && zip -qr ../results.zip . && cd ..
-zip -qr results.zip bench/results 2>/dev/null
+mkdir -p out && cp -r bench/results out/speed_results 2>/dev/null
+$PY -c "import shutil; shutil.make_archive('results', 'zip', 'out')"
 echo
 if [ $code -eq 0 ]; then
   echo ">>> Done. Download narrator/results.zip (right-click it on the left, Download), then TERMINATE the pod."
